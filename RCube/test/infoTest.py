@@ -14,3 +14,8 @@ class InfoTest(unittest.TestCase):
         parms = {'op': 'info'}
         actualResult = info._info(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test100_020_ShouldReturnMyUserNameWithExtra(self):
+        expectedResult = {'user': 'cdd0035'}
+        parms = {'op': 'info', 'faces': '123456'}
+        actualResult = info._info(parms)
+        self.assertDictEqual(expectedResult, actualResult)
