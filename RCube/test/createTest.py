@@ -27,8 +27,15 @@ class createTest(unittest.TestCase):
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
         
-    def test100_020_ShouldRetrunFacesNonNumerical(self):
-        expectedResult = {'cube': 'AAAAAAAAABBBBBBBBBCCCCCCCCCDDDDDDDDDEEEEEEEEEFFFFFFFFF', 'integrity': '60024C1DB8138D8D199D879E936ADD2AF35739DDC9FBC6348E2F555259FD7E9D'}
-        parms = {'op': 'create', 'faces': 'ABCDEF'}
+#     def test100_020_ShouldRetrunFacesNonNumerical(self):
+#         expectedResult = {'cube': 'AAAAAAAAABBBBBBBBBCCCCCCCCCDDDDDDDDDEEEEEEEEEFFFFFFFFF', 'integrity': '60024C1DB8138D8D199D879E936ADD2AF35739DDC9FBC6348E2F555259FD7E9D'}
+#         parms = {'op': 'create', 'faces': 'ABCDEF'}
+#         actualResult = create._create(parms)
+#         self.assertDictEqual(expectedResult, actualResult)
+
+    def test100_020_ShouldRetrunErrorBadLength(self):
+        expectedResult = {'status': 'error: bad length'}
+        parms = {'op': 'create', 'faces': 'ABCDE'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
+
