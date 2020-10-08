@@ -1,3 +1,8 @@
+'''
+Created on Oct 7, 2020
+
+@author: Chase Dumbacher
+'''
 import hashlib
 
 def _create(parms):
@@ -13,9 +18,9 @@ def _create(parms):
     faces = str(parms['faces'])
     
     cube = ""
-    for i in faces:
-        for x in range(9):
-            cube += str(i)
+    for face in faces:
+        for numOfFaces in range(9):
+            cube += str(face)
     #print(cube)
     ByteCube = bytearray(cube,'utf8')
     Sha256 = hashlib.sha256(ByteCube).hexdigest()
