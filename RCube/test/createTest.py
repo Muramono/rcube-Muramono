@@ -45,7 +45,7 @@ class createTest(unittest.TestCase):
 
     def test200_020_ShouldRetrunErrorDuplicate(self):
         expectedResult = {'status': 'error: bad length'}
-        parms = {'op': 'create', 'faces': 'ABCDE'}
+        parms = {'op': 'create', 'faces': 'AABCDE'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
 
