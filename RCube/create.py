@@ -1,7 +1,8 @@
 import hashlib
 
 def _create(parms):
-    
+    if(parms['faces'] == ''):
+        parms['faces'] = 'gybwro'
     if(len(parms['faces']) != 6):
         return {'status': 'error: bad length'}
     
