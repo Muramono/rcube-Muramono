@@ -8,6 +8,7 @@ import RCube.create as create
 
 class createTest(unittest.TestCase):
 
+# Test in this section where test used to incrementally develop the 'Create' function. They are now commented out to avoid unnecessary confusion of 'failed test'
 
 #     def test100_010_ShouldRetrunCubeWithFaces(self):
 #         expectedResult = {'cube': '111111111222222222333333333444444444555555555666666666'}
@@ -33,9 +34,20 @@ class createTest(unittest.TestCase):
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
 
-    def test100_020_ShouldRetrunErrorBadLength(self):
+## Test below are production acceptance test.
+    # All sad path tests are 200 tests
+    # All happy path tests are 100 tests
+    def test200_010_ShouldRetrunErrorBadLength(self):
         expectedResult = {'status': 'error: bad length'}
         parms = {'op': 'create', 'faces': 'ABCDE'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
+
+    def test200_020_ShouldRetrunErrorDuplicate(self):
+        expectedResult = {'status': 'error: bad length'}
+        parms = {'op': 'create', 'faces': 'ABCDE'}
+        actualResult = create._create(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+
+
 

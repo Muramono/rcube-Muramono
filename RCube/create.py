@@ -1,9 +1,12 @@
 import hashlib
 
 def _create(parms):
-    if(parms['faces'].length() != 6):
-        return {'status': 'error: bad length'}
+    
     faces = str(parms['faces'])
+    
+    if(faces.length() != 6):
+        return {'status': 'error: bad length'}
+    
     cube = ""
     for i in faces:
         for x in range(9):
