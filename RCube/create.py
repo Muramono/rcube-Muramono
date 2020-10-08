@@ -10,6 +10,7 @@ def _create(parms):
             return {'status': 'error: duplicate'}
     
     faces = str(parms['faces'])
+    
     cube = ""
     for i in faces:
         for x in range(9):
@@ -20,5 +21,3 @@ def _create(parms):
     Sha256 = Sha256.upper()
     result = {'cube': cube, 'integrity': Sha256}
     return result
-
-_create({'op': 'create', 'faces': '123457'})

@@ -22,13 +22,13 @@ class createTest(unittest.TestCase):
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
 
-#     def test100_020_ShouldRetrunFacesWithInput(self):
+#     def test100_030_ShouldRetrunFacesWithInput(self):
 #         expectedResult = {'cube': '111111111222222222333333333444444444555555555777777777', 'integrity': '5CD36407758A5A2701A93E233647785E3833C67155A081BBF9F9BB214C253BD6'}
 #         parms = {'op': 'create', 'faces': 123457}
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
         
-#     def test100_020_ShouldRetrunFacesNonNumerical(self):
+#     def test100_040_ShouldRetrunFacesNonNumerical(self):
 #         expectedResult = {'cube': 'AAAAAAAAABBBBBBBBBCCCCCCCCCDDDDDDDDDEEEEEEEEEFFFFFFFFF', 'integrity': '60024C1DB8138D8D199D879E936ADD2AF35739DDC9FBC6348E2F555259FD7E9D'}
 #         parms = {'op': 'create', 'faces': 'ABCDEF'}
 #         actualResult = create._create(parms)
@@ -46,6 +46,12 @@ class createTest(unittest.TestCase):
     def test200_020_ShouldRetrunErrorDuplicate(self):
         expectedResult = {'status': 'error: duplicate'}
         parms = {'op': 'create', 'faces': 'AABCDE'}
+        actualResult = create._create(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+        
+    def test100_050_ShouldRetrunDefaultCreateResponse(self):
+        expectedResult = {'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status': 'ok'}
+        parms = {'op': 'create'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
 
