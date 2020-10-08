@@ -2,7 +2,7 @@ import hashlib
 
 def _create(parms):
     
-    if(parms['faces'].length() != 6):
+    if(len(parms['faces']) != 6):
         return {'status': 'error: bad length'}
     
     for char in parms['faces']:
