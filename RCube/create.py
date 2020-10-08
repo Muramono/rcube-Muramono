@@ -1,3 +1,6 @@
+import hashlib
+
 def _create(parms):
-    result = {'cube': '111111111222222222333333333444444444555555555666666666'}
+    faces = '111111111222222222333333333444444444555555555666666666'
+    result = {'cube': faces}
     return result
