@@ -5,7 +5,7 @@ def _create(parms):
     cube = ""
     for i in faces:
         for x in range(9):
-            cube += x
+            cube += str(x)
     cube = bytearray(cube)
     Sha256 = hashlib.sha256(cube).hexdigest()
     Sha256 = Sha256.upper()
