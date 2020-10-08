@@ -8,7 +8,7 @@ def _create(parms):
             cube += str(i)
     #print(cube)
     cube = bytearray(cube,'utf8')
-    Sha256 = hashlib.sha256(cube).hexdigest()
+    Sha256 = hashlib.sha256(b"111111111222222222333333333444444444555555555777777777").hexdigest()
     Sha256 = Sha256.upper()
     result = {'cube': cube, 'integrity': Sha256}
     return result
