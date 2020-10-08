@@ -15,8 +15,14 @@ class createTest(unittest.TestCase):
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
 
-    def test100_020_ShouldRetrunCubeWithSHA(self):
-        expectedResult = {'cube': '111111111222222222333333333444444444555555555666666666', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
-        parms = {'op': 'create'}
+#     def test100_020_ShouldRetrunCubeWithSHA(self):
+#         expectedResult = {'cube': '111111111222222222333333333444444444555555555666666666', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
+#         parms = {'op': 'create'}
+#         actualResult = create._create(parms)
+#         self.assertDictEqual(expectedResult, actualResult)
+
+    def test100_020_ShouldRetrunFacesWithInput(self):
+        expectedResult = {'cube': '111111111222222222333333333444444444555555555777777777', 'integrity': '5CD36407758A5A2701A93E233647785E3833C67155A081BBF9F9BB214C253BD6'}
+        parms = {'op': 'create', 'faces': 123457}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
