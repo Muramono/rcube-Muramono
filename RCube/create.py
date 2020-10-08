@@ -21,7 +21,6 @@ def _create(parms):
     for face in faces:
         for numOfFaces in range(9):
             cube += str(face)
-    #print(cube)
     ByteCube = bytearray(cube,'utf8')
     Sha256 = hashlib.sha256(ByteCube).hexdigest()
     Sha256 = Sha256.upper()
