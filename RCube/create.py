@@ -4,7 +4,7 @@ def _create(parms):
     
     faces = str(parms['faces'])
     
-    if(faces.length() != 6):
+    if(str(faces).length() != 6):
         return {'status': 'error: bad length'}
     
     cube = ""
