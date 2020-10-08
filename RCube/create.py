@@ -20,5 +20,5 @@ def _create(parms):
     ByteCube = bytearray(cube,'utf8')
     Sha256 = hashlib.sha256(ByteCube).hexdigest()
     Sha256 = Sha256.upper()
-    result = {'cube': cube, 'integrity': Sha256}
+    result = {'cube': cube, 'integrity': Sha256, 'status': 'ok'}
     return result
