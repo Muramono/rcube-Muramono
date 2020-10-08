@@ -1,7 +1,7 @@
 import hashlib
 
 def _create(parms):
-    faces = parms['faces']
+    faces = str(parms['faces'])
     cube = ""
     for i in faces:
         for x in range(9):
