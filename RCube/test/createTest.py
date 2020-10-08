@@ -54,6 +54,11 @@ class createTest(unittest.TestCase):
         parms = {'op': 'create'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test100_060_ShouldRetrunDefaultCreateResponse(self):
+        expectedResult = {'cube': '111111111222222222333333333444444444555555555666666666', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status': 'ok'}
+        parms = {'op': 'create', 'faces': '123456'}
+        actualResult = create._create(parms)
+        self.assertDictEqual(expectedResult, actualResult
 
 
 
