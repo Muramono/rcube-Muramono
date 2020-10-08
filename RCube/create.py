@@ -1,3 +1,3 @@
 def _create(parms):
-    result = {'create': 'create stub'}
+    result = {'cube': 'create stub'}
     return result
