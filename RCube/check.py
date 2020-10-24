@@ -31,5 +31,3 @@ def _check(parms):
         status = 'spots'
     result = {'status': status}
     return result
-
-_check({'op': 'check', 'cube': 'rrrrbrrrryyyyryyyyoooogoooowwwwowwwwbbbbby', 'integrity': '103D576CB789BDAE083FBD95A05B5829009C465E388F9A8CFAD60B87CF6DD21A'})
