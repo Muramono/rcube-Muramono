@@ -3,7 +3,7 @@ import hashlib
 def _check(parms):
     status = ''
     firstSpot = ''
-    midSpot = ''
+    midSpot = parms['cube'][4]
     counter = 0
     FullCheck = True
     SpotCheck = False
