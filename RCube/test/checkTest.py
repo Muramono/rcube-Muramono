@@ -1,0 +1,17 @@
+'''
+Created on Oct 23, 2020
+
+@author: xxcha
+'''
+import unittest
+import RCube.create as create
+
+class checkTest(unittest.TestCase):
+    
+    ## Iteration 2 incremental development test
+    
+        def test000_010_ShouldReturnDefaultStatus(self):
+            expectedResult = {'check': 'check stub'}
+            parms = {'op': 'check'}
+            actualResult = create._create(parms)
+            self.assertDictEqual(expectedResult, actualResult)

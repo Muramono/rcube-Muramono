@@ -34,6 +34,7 @@ class createTest(unittest.TestCase):
 #         actualResult = create._create(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
 
+
 ## Test below are production acceptance test.
     # All sad path tests are 200 tests
     # All happy path tests are 100 tests
@@ -51,7 +52,7 @@ class createTest(unittest.TestCase):
         
     def test100_050_ShouldReturnDefaultCreateResponse(self):
         expectedResult = {'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status': 'ok'}
-        parms = {'op': 'create'}
+        parms = {'op': 'create', 'faces': None}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_060_ShouldReturnNormalFaces(self):
@@ -59,5 +60,14 @@ class createTest(unittest.TestCase):
         parms = {'op': 'create', 'faces': '123456'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
-
+    def test100_070_NoFaceReturnDefaultFaces(self):
+        expectedResult = {'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status': 'ok'}
+        parms = {'op': 'create'}
+        actualResult = create._create(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    def test100_080_ExtraneousParmsReturnDefault(self):
+        expectedResult = {'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status': 'ok'}
+        parms = {'op': 'create', 'f': '123456'}
+        actualResult = create._create(parms)
+        self.assertDictEqual(expectedResult, actualResult)
                              
