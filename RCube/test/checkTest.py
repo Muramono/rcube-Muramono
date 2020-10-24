@@ -4,7 +4,7 @@ Created on Oct 23, 2020
 @author: xxcha
 '''
 import unittest
-import RCube.create as create
+import RCube.check as check
 
 class checkTest(unittest.TestCase):
     
@@ -13,5 +13,5 @@ class checkTest(unittest.TestCase):
         def test000_010_ShouldReturnDefaultStatus(self):
             expectedResult = {'check': 'check stub'}
             parms = {'op': 'check'}
-            actualResult = create._create(parms)
+            actualResult = check._check(parms)
             self.assertDictEqual(expectedResult, actualResult)
