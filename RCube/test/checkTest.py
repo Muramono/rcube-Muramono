@@ -38,7 +38,7 @@ class checkTest(unittest.TestCase):
 ## Sad Path Test
     def test200_020_FullCheckBadKeyReturnError(self):
         expectedResult = {'status': 'error bad integrity key'}
-        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '563F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
