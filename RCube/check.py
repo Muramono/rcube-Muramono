@@ -4,7 +4,6 @@ def _check(parms):
     status = ''
     firstSpot = ''
     midSpot = parms['cube'][4]
-    print(midSpot)
     counter = 0
     FullCheck = True
     SpotCheck = False
@@ -14,7 +13,6 @@ def _check(parms):
     if(parms['integrity'] != IntegrityKey):
         return {'status': 'error bad integrity key'}
     for spot in parms['cube']:
-        print(spot)
         if(counter == 0 or counter % 9 == 0):
             firstSpot = spot
             midSpot = parms['cube'][counter + 4]
