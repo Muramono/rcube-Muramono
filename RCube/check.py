@@ -6,6 +6,7 @@ def _check(parms):
     midSpot = ''
     cornerSpot = ''
     counter = 0
+    faceIndex = 1
     FullCheck = True
     SpotCheck = True
     CrossCheck = True
@@ -25,20 +26,24 @@ def _check(parms):
             if(spot != cornerSpot):
                 CrossCheck = False
         #Checks if the even spots or middle spot is equal to the middle **CROSS CHECK**
-        if( (counter + 1) % 2 == 0 and (counter + 1) % 5 == 0):
+        if( (faceIndex) % 2 == 0 and (faceIndex) % 5 == 0):
             if(spot != midSpot):
                 CrossCheck = False
         #Checks if the middle spot is equal to any outer spots **SPOTS CHECK**
-        if( (counter + 1) % 5 != 0):
+        if( (faceIndex) % 5 != 0):
             if(spot == midSpot):
                 SpotCheck = False
-        if( (counter + 1) % 5 == 0):
+        #Checks if the all outer spots are equal. **SPOTS CHECK**
+        if( (faceIndex) % 5 == 0):
             if(spot != firstSpot):
                 SpotCheck = False
         #Checks to see if any spot is different **FULL CHECK**
         if(spot != firstSpot):
             FullCheck = False
         counter += 1
+        faceIndex += 1
+        if(faceIndex > 9):
+            faceIndex = 1
     if(FullCheck == True):
         status = 'full'
     if(SpotCheck == True):
