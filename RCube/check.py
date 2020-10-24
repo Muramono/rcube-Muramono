@@ -10,5 +10,5 @@ def _check(parms):
             FullCheck = False
     if(FullCheck == True):
         status = 'full'
-    result = {'check': status}
+    result = {'status': status}
     return result

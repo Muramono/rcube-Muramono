@@ -22,6 +22,6 @@ class checkTest(unittest.TestCase):
 #         self.assertDictEqual(expectedResult, actualResult)
     def test000_030_SimpleFullCheck(self):
         expectedResult = {'status': 'full'}
-        parms = {'op': 'status', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
