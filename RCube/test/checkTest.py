@@ -31,7 +31,7 @@ class checkTest(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     def test100_020_SimpleSpotCheck(self):
         expectedResult = {'status': 'spots'}
-        parms = {'op': 'check', 'cube': 'rrrrbrrrryyyyryyyyoooogoooowwwwowwwwbbbbybbbbggggwgggg', 'integrity': '103D576CB789BDAE083FBD95A05B5829009C465E388F9A8CFAD60B87CF6DD21A'}
+        parms = {'op': 'check', 'cube': 'rrrrbrrrryyyyryyyyoooogoooowwwwowwwwbbbbybbbbggggwgggg', 'integrity': '8BE0EEDF13B2B464A2C7A120E6104AC7039B758E93D6F65651616FBBEED9A1EF'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_030_SimpleCrossesCheck(self):
