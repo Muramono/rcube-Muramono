@@ -22,7 +22,7 @@ def _check(parms):
             SpotCheck = False
         if(spot != firstSpot):
             FullCheck = False
-    counter += 1
+        counter += 1
     if(FullCheck == True):
         status = 'full'
     if(SpotCheck == True):
