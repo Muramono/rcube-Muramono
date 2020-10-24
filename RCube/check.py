@@ -16,7 +16,7 @@ def _check(parms):
     for spot in parms['cube']:
         if(counter == 0 or counter % 9 == 0):
             firstSpot = spot
-        if(midIndexs.contains(counter)):
+        if(counter in midIndexs):
             midSpot = spot
         if(spot == midSpot):
             SpotCheck = False
