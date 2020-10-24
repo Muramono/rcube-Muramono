@@ -29,9 +29,14 @@ class checkTest(unittest.TestCase):
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
-    def test100_010_SimpleSpotCheck(self):
+    def test100_020_SimpleSpotCheck(self):
         expectedResult = {'status': 'spots'}
-        parms = {'op': 'check', 'cube': 'rrrrbrrrryyyyryyyyoooogoooowwwwowwwwbbbbby', 'integrity': '103D576CB789BDAE083FBD95A05B5829009C465E388F9A8CFAD60B87CF6DD21A'}
+        parms = {'op': 'check', 'cube': 'rrrrbrrrryyyyryyyyoooogoooowwwwowwwwbbbbybbbbggggwgggg', 'integrity': '103D576CB789BDAE083FBD95A05B5829009C465E388F9A8CFAD60B87CF6DD21A'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    def test100_030_SimpleCrossesCheck(self):
+        expectedResult = {'status': 'crosses'}
+        parms = {'op': 'check', 'cube': 'ybybbbybybrbrrrbrbwgwgggwgwgygyyygygryryyyryrowowwwowo', 'integrity': '103D576CB789BDAE083FBD95A05B5829009C465E388F9A8CFAD60B87CF6DD21A'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
