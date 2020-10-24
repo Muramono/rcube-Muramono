@@ -48,5 +48,7 @@ def _check(parms):
         status = 'full'
     if(SpotCheck == True):
         status = 'spots'
+    if(CrossCheck == True):
+        status = 'crosses'
     result = {'status': status}
     return result
