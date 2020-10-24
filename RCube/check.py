@@ -3,10 +3,12 @@ import hashlib
 def _check(parms):
     status = ''
     firstSpot = ''
-    midSpot = parms['cube'][4]
+    midSpot = ''
+    cornerSpot = ''
     counter = 0
     FullCheck = True
     SpotCheck = False
+    CrossCheck = True
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
     IntegrityKey = IntegrityKey.upper()
@@ -16,6 +18,13 @@ def _check(parms):
         if(counter == 0 or counter % 9 == 0):
             firstSpot = spot
             midSpot = parms['cube'][counter + 4]
+            cornerSpot = spot
+        if(( counter + 1) % 2 != 0 and (counter + 1) % 5 != 0):
+            if(spot != cornerSpot):
+                CrossCheck = False
+        if( (counter + 1) % 2 == 0 and (counter + 1) % 5 == 0):
+            if(spot != midSpot):
+                CrossCheck = False
         if(spot != midSpot):
             SpotCheck = True
         if(spot != firstSpot):
