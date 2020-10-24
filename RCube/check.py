@@ -3,11 +3,11 @@ import hashlib
 def _check(parms):
     status = ''
     firstSpot = ''
-    midSpot = ''
+    midSpot = parms['cube'][4]
     counter = 0
     FullCheck = True
     SpotCheck = True
-    midIndexs = [5,14,19,24,29,34]
+    midIndexs = [4,13,18,23,28,33]
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
     IntegrityKey = IntegrityKey.upper()
