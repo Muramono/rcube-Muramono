@@ -20,8 +20,16 @@ class checkTest(unittest.TestCase):
 #         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
 #         actualResult = check._check(parms)
 #         self.assertDictEqual(expectedResult, actualResult)
-    def test000_030_SimpleFullCheck(self):
+
+## Iteration 2 Acceptance Test
+    def test100_010_SimpleFullCheck(self):
         expectedResult = {'status': 'full'}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test100_020_FullCheckBadKeyReturnError(self):
+        expectedResult = {'status': 'error bad integrity key'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '563F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+        
