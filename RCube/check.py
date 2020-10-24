@@ -25,5 +25,7 @@ def _check(parms):
     counter += 1
     if(FullCheck == True):
         status = 'full'
+    if(SpotCheck == True):
+        status = 'spots'
     result = {'status': status}
     return result
