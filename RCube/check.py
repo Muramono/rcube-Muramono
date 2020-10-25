@@ -22,11 +22,11 @@ def _check(parms):
             midSpot = parms['cube'][counter + 4]
             cornerSpot = spot
         #Checks to see if the odd and not the middle spot are equal to the corner spot(s) **CROSS CHECK**
-        if( ( counter + 1) % 2 != 0 and (counter + 1) % 5 != 0):
+        if( (faceIndex) % 2 != 0 and (faceIndex) % 5 != 0):
             if(spot != cornerSpot):
                 CrossCheck = False
         #Checks if the even spots or middle spot is equal to the middle **CROSS CHECK**
-        if( (faceIndex) % 2 == 0 and (faceIndex) % 5 == 0):
+        if( (faceIndex) % 2 == 0 or (faceIndex) % 5 == 0):
             if(spot != midSpot):
                 CrossCheck = False
         #Checks if the middle spot is equal to any outer spots **SPOTS CHECK**
@@ -37,6 +37,9 @@ def _check(parms):
         if( (faceIndex) % 5 == 0):
             if(spot != firstSpot):
                 SpotCheck = False
+        #Check to make sure the corner and non corner spots are equal **SPOTS CHECK**
+        if(midSpot == firstSpot):
+            SpotCheck = False
         #Checks to see if any spot is different **FULL CHECK**
         if(spot != firstSpot):
             FullCheck = False
