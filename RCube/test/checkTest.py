@@ -85,3 +85,8 @@ class checkTest(unittest.TestCase):
         parms = {'op': 'check', 'cube': 'bbgbbbbbbwoooooooogogggggggrrrrrrrrrwwwwwwwwbyyyyyyyyy', 'integrity': '573D39853F85AFD6E55A0760EFA1EBE8A7EACA41753055D9B41D0B3FC5C2E986'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test200_080_CheckInvalidEdgesReturnError(self):
+        expectedResult = {'status': 'error impossible edge'}
+        parms = {'op': 'check', 'cube': '111112111222122222333333333444444444555555555666666666', 'integrity': '61E17B21DC3147541FD168E65EDFACD2E5B302646450329B5848D6343D55129D'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
