@@ -12,17 +12,33 @@ def _check(parms):
     SpotCheck = True
     CrossCheck = True
     #Parms/Sad Checks
+    
+    #Missing Cube Parm Check
     if('cube' not in parms):
         return {'status': 'error no cube op'}
+    #Missing Cube Value Check
     if(parms['cube'] == None):
         return {'status': 'error missing cube'}
+    #Proper Cube Length Check
     if(len(parms['cube']) != 54):
         return {'status': 'error incorrect cube size'}
+    #Distinct Elements Check
     for elements in parms['cube']:
         DistinctElem.append(elements)
     DistinctElem = list(set(DistinctElem))
     if(len(DistinctElem) != 6):
         return {'status': 'error non-distinct cube'}
+    #9 Of Each Distinct Element Check
+    ElementCounter = [0,0,0,0,0,0]
+    for element in parms['cube']:
+        i = 0
+        for DistElements in DistinctElem:
+            if(element == DistElements):
+                ElementCounter[i] += 1
+            i += 1
+    for Counter in ElementCounter:
+        if(Counter != 9):
+            return {'status': 'error lacking 9 elements of each distinct'}
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()

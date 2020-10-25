@@ -67,11 +67,11 @@ class checkTest(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     def test200_050_CheckDistinctCubeReturnError(self):
         expectedResult = {'status': 'error non-distinct cube'}
-        parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555111111111', 'integrity': '825E9253B6D7DB91050DA156E2CF524AE9B532B0C9C3DF89B01F18592850D5D3'}
+        parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555111111111', 'integrity': '93C6A03A7B2F9F5D319128523FA96AB3C748C67EAA6FDD4DAC8311F4D0393921'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test200_060_CheckLackingElementsReturnError(self):
         expectedResult = {'status': 'error lacking 9 elements of each distinct'}
-        parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555666666555', 'integrity': '825E9253B6D7DB91050DA156E2CF524AE9B532B0C9C3DF89B01F18592850D5D3'}
+        parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555666666555', 'integrity': '6225DE1E096694A927A193B1281028E8D528EB8004D9F2999781D07E58BCA2D4'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
