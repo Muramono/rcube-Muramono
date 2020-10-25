@@ -70,3 +70,8 @@ class checkTest(unittest.TestCase):
         parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555111111111', 'integrity': '825E9253B6D7DB91050DA156E2CF524AE9B532B0C9C3DF89B01F18592850D5D3'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test200_060_CheckLackingElementsReturnError(self):
+        expectedResult = {'status': 'error lacking 9 elements of each distinct'}
+        parms = {'op': 'check', 'cube': '111111111222222222333333333444444444555555555666666555', 'integrity': '825E9253B6D7DB91050DA156E2CF524AE9B532B0C9C3DF89B01F18592850D5D3'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult
