@@ -39,6 +39,11 @@ def _check(parms):
     for Counter in ElementCounter:
         if(Counter != 9):
             return {'status': 'error lacking 9 elements of each distinct'}
+    #Non-Distinct Middle Check
+    MiddleEle = [(parms['cube'][4]), (parms['cube'][13]), (parms['cube'][22]), (parms['cube'][31]), (parms['cube'][40]), (parms['cube'][49]),]
+    MiddleEle = list(set(DistinctElem))
+    if(len(MiddleEle) != 6):
+        return {'status': 'error non-distinct middle'}
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
