@@ -107,7 +107,37 @@ def _check(parms):
         return {'status': 'error impossible corner'}
     if(parms['cube'][8] == MiddleEle[1]  and parms['cube'][35] == MiddleEle[3] or parms['cube'][35] == MiddleEle[1]  and parms['cube'][8] == MiddleEle[3]):
         return {'status': 'error impossible corner'}
-#   MiddleEleDict = {(parms['cube'][4]): 'f', (parms['cube'][13]): 'r', (parms['cube'][22]): 'b', (parms['cube'][31]): 'l', (parms['cube'][40]): 't', (parms['cube'][49]): 'u'}
+    #Invalid Edge Check
+    
+    #Top Front To Top Comparison
+    if(parms['cube'][1] == MiddleEle[0]  and parms['cube'][43] == MiddleEle[2] or parms['cube'][1] == MiddleEle[0]  and parms['cube'][43] == MiddleEle[2]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][1] == MiddleEle[4]  and parms['cube'][43] == MiddleEle[5] or parms['cube'][1] == MiddleEle[4]  and parms['cube'][43] == MiddleEle[5]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][1] == MiddleEle[1]  and parms['cube'][43] == MiddleEle[3] or parms['cube'][1] == MiddleEle[1]  and parms['cube'][43] == MiddleEle[3]):
+        return {'status': 'error impossible edge'}
+    #Right Front To Right Comparison
+    if(parms['cube'][5] == MiddleEle[0]  and parms['cube'][12] == MiddleEle[2] or parms['cube'][12] == MiddleEle[0]  and parms['cube'][5] == MiddleEle[2]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][5] == MiddleEle[4]  and parms['cube'][12] == MiddleEle[5] or parms['cube'][12] == MiddleEle[4]  and parms['cube'][5] == MiddleEle[5]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][5] == MiddleEle[1]  and parms['cube'][12] == MiddleEle[3] or parms['cube'][12] == MiddleEle[1]  and parms['cube'][5] == MiddleEle[3]):
+        return {'status': 'error impossible edge'}
+    #Bottom Front To Under Comparison
+    if(parms['cube'][7] == MiddleEle[0]  and parms['cube'][46] == MiddleEle[2] or parms['cube'][46] == MiddleEle[0]  and parms['cube'][7] == MiddleEle[2]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][7] == MiddleEle[4]  and parms['cube'][46] == MiddleEle[5] or parms['cube'][46] == MiddleEle[4]  and parms['cube'][7] == MiddleEle[5]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][7] == MiddleEle[1]  and parms['cube'][46] == MiddleEle[3] or parms['cube'][46] == MiddleEle[1]  and parms['cube'][7] == MiddleEle[3]):
+        return {'status': 'error impossible edge'}
+    #Left Front To Left Comparison
+    if(parms['cube'][3] == MiddleEle[0]  and parms['cube'][32] == MiddleEle[2] or parms['cube'][32] == MiddleEle[0]  and parms['cube'][3] == MiddleEle[2]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][3] == MiddleEle[4]  and parms['cube'][32] == MiddleEle[5] or parms['cube'][32] == MiddleEle[4]  and parms['cube'][3] == MiddleEle[5]):
+        return {'status': 'error impossible edge'}
+    if(parms['cube'][3] == MiddleEle[1]  and parms['cube'][32] == MiddleEle[3] or parms['cube'][32] == MiddleEle[1]  and parms['cube'][3] == MiddleEle[3]):
+        return {'status': 'error impossible edge'}
+    ## Cube Face Order F, R, B, L, T, U
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
