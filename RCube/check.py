@@ -12,7 +12,6 @@ def _check(parms):
     SpotCheck = True
     CrossCheck = True
     #Parms/Sad Checks
-    
     #Missing Cube Parm Check
     if('cube' not in parms):
         return {'status': 'error no cube op'}

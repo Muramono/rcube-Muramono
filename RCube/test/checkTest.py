@@ -85,8 +85,13 @@ class checkTest(unittest.TestCase):
         parms = {'op': 'check', 'cube': 'bbgbbbbbbwoooooooogogggggggrrrrrrrrrwwwwwwwwbyyyyyyyyy', 'integrity': '573D39853F85AFD6E55A0760EFA1EBE8A7EACA41753055D9B41D0B3FC5C2E986'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
-    def test200_080_CheckInvalidEdgesReturnError(self):
+    def test200_090_CheckInvalidEdgesReturnError(self):
         expectedResult = {'status': 'error impossible edge'}
         parms = {'op': 'check', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr', 'integrity': '3C0BA8BDCEDE1484616367FF864B66B643B8AF08566F650C4A43148CEAC8D289'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    def test200_100_CheckNoKeyValueReturnError(self):
+        expectedResult = {'status': 'error missing key value'}
+        parms = {'op': 'check', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr', 'integrity': None}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
