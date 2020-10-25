@@ -81,7 +81,7 @@ class checkTest(unittest.TestCase):
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test200_080_CheckInvalidCornersReturnError(self):
-        expectedResult = {'status': 'error invalid corners'}
+        expectedResult = {'status': 'error impossible corner'}
         parms = {'op': 'check', 'cube': 'bbgbbbbbbwoooooooogogggggggrrrrrrrrrwwwwwwwwbyyyyyyyyy', 'integrity': '573D39853F85AFD6E55A0760EFA1EBE8A7EACA41753055D9B41D0B3FC5C2E986'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)

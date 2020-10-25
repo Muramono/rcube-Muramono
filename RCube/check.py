@@ -42,9 +42,72 @@ def _check(parms):
     #Non-Distinct Middle Check
     MiddleEle = [(parms['cube'][4]), (parms['cube'][13]), (parms['cube'][22]), (parms['cube'][31]), (parms['cube'][40]), (parms['cube'][49])]
     DistinctMiddleEle = []
-    [ DistinctMiddleEle.append(x) for x in MiddleEle if x not in DistinctMiddleEle]
+    [DistinctMiddleEle.append(x) for x in MiddleEle if x not in DistinctMiddleEle]
     if(len(DistinctMiddleEle) != 6):
         return {'status': 'error non-distinct middle'}
+    #Invalid Corner Check
+    
+    #TopLeft Corner
+    #Front To Top Comparison
+    if(parms['cube'][0] == MiddleEle[0]  and parms['cube'][42] == MiddleEle[2] or parms['cube'][42] == MiddleEle[0]  and parms['cube'][0] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][0] == MiddleEle[4]  and parms['cube'][42] == MiddleEle[5] or parms['cube'][42] == MiddleEle[4]  and parms['cube'][0] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][0] == MiddleEle[1]  and parms['cube'][42] == MiddleEle[3] or parms['cube'][42] == MiddleEle[1]  and parms['cube'][0] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #Front To Left Comparison
+    if(parms['cube'][0] == MiddleEle[0]  and parms['cube'][29] == MiddleEle[2] or parms['cube'][29] == MiddleEle[0]  and parms['cube'][0] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][0] == MiddleEle[4]  and parms['cube'][29] == MiddleEle[5] or parms['cube'][29] == MiddleEle[4]  and parms['cube'][0] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][0] == MiddleEle[1]  and parms['cube'][29] == MiddleEle[3] or parms['cube'][29] == MiddleEle[1]  and parms['cube'][0] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #TopRight Corner
+    #Front To Top Comparison
+    if(parms['cube'][2] == MiddleEle[0]  and parms['cube'][44] == MiddleEle[2] or parms['cube'][44] == MiddleEle[0]  and parms['cube'][2] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][2] == MiddleEle[4]  and parms['cube'][44] == MiddleEle[5] or parms['cube'][44] == MiddleEle[4]  and parms['cube'][2] == MiddleEle[5] ):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][2] == MiddleEle[1]  and parms['cube'][44] == MiddleEle[3] or parms['cube'][44] == MiddleEle[1]  and parms['cube'][2] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #Front To Right Comparison
+    if(parms['cube'][2] == MiddleEle[0]  and parms['cube'][9] == MiddleEle[2] or parms['cube'][9] == MiddleEle[0]  and parms['cube'][2] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][2] == MiddleEle[4]  and parms['cube'][9] == MiddleEle[5] or parms['cube'][9] == MiddleEle[4]  and parms['cube'][2] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][2] == MiddleEle[1]  and parms['cube'][9] == MiddleEle[3] or parms['cube'][9] == MiddleEle[1]  and parms['cube'][2] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #BottomRight Corner
+    #Front To Under Comparison
+    if(parms['cube'][8] == MiddleEle[0]  and parms['cube'][47] == MiddleEle[2] or parms['cube'][47] == MiddleEle[0]  and parms['cube'][8] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[4]  and parms['cube'][47] == MiddleEle[5] or parms['cube'][47] == MiddleEle[4]  and parms['cube'][8] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[1]  and parms['cube'][47] == MiddleEle[3] or parms['cube'][47] == MiddleEle[1]  and parms['cube'][8] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #Front To Right Comparison
+    if(parms['cube'][8] == MiddleEle[0]  and parms['cube'][15] == MiddleEle[2] or parms['cube'][15] == MiddleEle[0]  and parms['cube'][8] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[4]  and parms['cube'][15] == MiddleEle[5] or parms['cube'][15] == MiddleEle[4]  and parms['cube'][8] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[1]  and parms['cube'][15] == MiddleEle[3] or parms['cube'][15] == MiddleEle[1]  and parms['cube'][8] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #BottomLeft Corner
+    #Front To Under Comparison
+    if(parms['cube'][6] == MiddleEle[0]  and parms['cube'][45] == MiddleEle[2] or parms['cube'][45] == MiddleEle[0]  and parms['cube'][6] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][6] == MiddleEle[4]  and parms['cube'][45] == MiddleEle[5] or parms['cube'][45] == MiddleEle[4]  and parms['cube'][6] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][6] == MiddleEle[1]  and parms['cube'][45] == MiddleEle[3] or parms['cube'][45] == MiddleEle[1]  and parms['cube'][6] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+    #Front To Left Comparison
+    if(parms['cube'][8] == MiddleEle[0]  and parms['cube'][35] == MiddleEle[2] or parms['cube'][35] == MiddleEle[0]  and parms['cube'][8] == MiddleEle[2]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[4]  and parms['cube'][35] == MiddleEle[5] or parms['cube'][35] == MiddleEle[4]  and parms['cube'][8] == MiddleEle[5]):
+        return {'status': 'error impossible corner'}
+    if(parms['cube'][8] == MiddleEle[1]  and parms['cube'][35] == MiddleEle[3] or parms['cube'][35] == MiddleEle[1]  and parms['cube'][8] == MiddleEle[3]):
+        return {'status': 'error impossible corner'}
+#   MiddleEleDict = {(parms['cube'][4]): 'f', (parms['cube'][13]): 'r', (parms['cube'][22]): 'b', (parms['cube'][31]): 'l', (parms['cube'][40]): 't', (parms['cube'][49]): 'u'}
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
