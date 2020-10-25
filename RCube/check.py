@@ -29,17 +29,17 @@ def _check(parms):
         if( (faceIndex) % 2 == 0 or (faceIndex) % 5 == 0):
             if(spot != midSpot):
                 CrossCheck = False
+        #Check to make sure the corner and non corner spots are equal **CROSS CHECK**
+        if(midSpot == firstSpot):
+            CrossCheck = False
         #Checks if the middle spot is equal to any outer spots **SPOTS CHECK**
         if( (faceIndex) % 5 != 0):
             if(spot == midSpot):
                 SpotCheck = False
         #Checks if the all outer spots are equal. **SPOTS CHECK**
-        if( (faceIndex) % 5 == 0):
+        if( (faceIndex) % 5 != 0):
             if(spot != firstSpot):
                 SpotCheck = False
-        #Check to make sure the corner and non corner spots are equal **SPOTS CHECK**
-        if(midSpot == firstSpot):
-            CrossCheck = False
         #Checks to see if any spot is different **FULL CHECK**
         if(spot != firstSpot):
             FullCheck = False
