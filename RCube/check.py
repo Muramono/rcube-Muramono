@@ -5,6 +5,7 @@ def _check(parms):
     firstSpot = ''
     midSpot = ''
     cornerSpot = ''
+    DistinctElem = []
     counter = 0
     faceIndex = 1
     FullCheck = True
@@ -17,6 +18,11 @@ def _check(parms):
         return {'status': 'error missing cube'}
     if(len(parms['cube']) != 54):
         return {'status': 'error incorrect cube size'}
+    for elements in parms['cube']:
+        DistinctElem.append(elements)
+    DistinctElem = list(set(DistinctElem))
+    if(len(DistinctElem) != 6):
+        return {'status': 'error non-distinct cube'}
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
