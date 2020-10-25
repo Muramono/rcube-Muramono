@@ -61,7 +61,7 @@ class checkTest(unittest.TestCase):
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test200_040_CheckCubeElementsReturnError(self):
-        expectedResult = {'status': 'error incorrect cube elements'}
+        expectedResult = {'status': 'error incorrect cube size'}
         parms = {'op': 'check', 'cube': '11111111122222222233333333344444444455555555566666666', 'integrity': '825E9253B6D7DB91050DA156E2CF524AE9B532B0C9C3DF89B01F18592850D5D3'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)

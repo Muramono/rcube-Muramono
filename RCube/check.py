@@ -15,6 +15,8 @@ def _check(parms):
         return {'status': 'error no cube op'}
     if(parms['cube'] == None):
         return {'status': 'error missing cube'}
+    if(len(parms['cube']) != 54):
+        return {'status': 'error incorrect cube size'}
     #Sha256 Conversion
     ByteCube = bytearray(parms['cube'],'utf8')
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
