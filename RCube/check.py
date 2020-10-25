@@ -12,6 +12,9 @@ def _check(parms):
     SpotCheck = True
     CrossCheck = True
     #Parms/Sad Checks
+    #Missing Key Value
+    if(parms['integrity'] == None):
+        return {'status': 'error missing key value'}
     #Missing Cube Parm Check
     if('cube' not in parms):
         return {'status': 'error no cube op'}
