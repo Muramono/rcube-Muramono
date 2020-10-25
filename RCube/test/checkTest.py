@@ -95,3 +95,8 @@ class checkTest(unittest.TestCase):
         parms = {'op': 'check', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr', 'integrity': None}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test200_100_CheckNoKeyReturnError(self):
+        expectedResult = {'status': 'error missing key'}
+        parms = {'op': 'check', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
