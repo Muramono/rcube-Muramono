@@ -77,6 +77,6 @@ class checkTest(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     def test200_070_CheckNonDistinctMidReturnError(self):
         expectedResult = {'status': 'error non-distinct middle'}
-        parms = {'op': 'check', 'cube': '111141111222222222333333333144444444555555555666666666', 'integrity': '6225DE1E096694A927A193B1281028E8D528EB8004D9F2999781D07E58BCA2D4'}
+        parms = {'op': 'check', 'cube': '111141111222222222333333333144444444555555555666666666', 'integrity': '0628732992F58A84A7F291067AB6CC9DC9B1AD8428DC93EE5126B0CD88108B0E'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
