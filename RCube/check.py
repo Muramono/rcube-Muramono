@@ -10,15 +10,15 @@ def _check(parms):
     FullCheck = True
     SpotCheck = True
     CrossCheck = True
-    ByteCube = bytearray(parms['cube'],'utf8')
-    IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
-    IntegrityKey = IntegrityKey.upper()
     #Parms/Sad Checks
     if(parms['cube'] == None):
         return {'status': 'error missing cube'}
     if(parms['integrity'] != IntegrityKey):
         return {'status': 'error bad integrity key'}
-    
+    #Sha256 Conversion
+    ByteCube = bytearray(parms['cube'],'utf8')
+    IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
+    IntegrityKey = IntegrityKey.upper()
     # Cube Valid Status Checks
     for spot in parms['cube']:
         #Sets Tracked spots to the appropriate value of the current face
