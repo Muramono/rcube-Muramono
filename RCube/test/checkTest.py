@@ -45,9 +45,14 @@ class checkTest(unittest.TestCase):
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
 ## Sad Path Test
-    def test200_020_FullCheckBadKeyReturnError(self):
+    def test200_010_CheckBadKeyReturnError(self):
         expectedResult = {'status': 'error bad integrity key'}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '563F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    def test200_020_CheckMissingCubeReturnError(self):
+        expectedResult = {'status': 'error missing cube'}
+        parms = {'op': 'check', 'cube': None, 'integrity': '563F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
