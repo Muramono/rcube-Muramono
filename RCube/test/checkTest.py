@@ -1,7 +1,7 @@
 '''
 Created on Oct 23, 2020
 
-@author: xxcha
+@author: Chase Dumbacher
 '''
 import unittest
 import RCube.check as check

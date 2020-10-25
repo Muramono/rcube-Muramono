@@ -10,12 +10,12 @@ def _check(parms):
     firstSpot = ''
     midSpot = ''
     cornerSpot = ''
-    DistinctElem = []
+    distinctElem = []
     counter = 0
     faceIndex = 1
-    FullCheck = True
-    SpotCheck = True
-    CrossCheck = True
+    fullCheck = True
+    spotCheck = True
+    crossCheck = True
     #Parms/Sad Checks
     #Missing Key Op
     if('integrity' not in parms):
@@ -34,15 +34,15 @@ def _check(parms):
         return {'status': 'error: incorrect cube size'}
     #Distinct Elements Check
     for elements in parms['cube']:
-        DistinctElem.append(elements)
-    DistinctElem = list(set(DistinctElem))
-    if(len(DistinctElem) != 6):
+        distinctElem.append(elements)
+    distinctElem = list(set(distinctElem))
+    if(len(distinctElem) != 6):
         return {'status': 'error: non-distinct cube'}
     #9 Of Each Distinct Element Check
     ElementCounter = [0,0,0,0,0,0]
     for element in parms['cube']:
         i = 0
-        for DistElements in DistinctElem:
+        for DistElements in distinctElem:
             if(element == DistElements):
                 ElementCounter[i] += 1
             i += 1
@@ -163,34 +163,34 @@ def _check(parms):
         #Checks to see if the odd and not the middle spot are equal to the corner spot(s) **CROSS CHECK**
         if( (faceIndex) % 2 != 0 and (faceIndex) % 5 != 0):
             if(spot != cornerSpot):
-                CrossCheck = False
+                crossCheck = False
         #Checks if the even spots or middle spot is equal to the middle **CROSS CHECK**
         if( (faceIndex) % 2 == 0 or (faceIndex) % 5 == 0):
             if(spot != midSpot):
-                CrossCheck = False
+                crossCheck = False
         #Check to make sure the corner and non corner spots are equal **CROSS CHECK**
         if(midSpot == firstSpot):
-            CrossCheck = False
+            crossCheck = False
         #Checks if the middle spot is equal to any outer spots **SPOTS CHECK**
         if( (faceIndex) % 5 != 0):
             if(spot == midSpot):
-                SpotCheck = False
+                spotCheck = False
         #Checks if the all outer spots are equal. **SPOTS CHECK**
         if( (faceIndex) % 5 != 0):
             if(spot != firstSpot):
-                SpotCheck = False
+                spotCheck = False
         #Checks to see if any spot is different **FULL CHECK**
         if(spot != firstSpot):
-            FullCheck = False
+            fullCheck = False
         counter += 1
         faceIndex += 1
         if(faceIndex > 9):
             faceIndex = 1
-    if(FullCheck == True):
+    if(fullCheck == True):
         status = 'full'
-    if(SpotCheck == True):
+    if(spotCheck == True):
         status = 'spots'
-    if(CrossCheck == True):
+    if(crossCheck == True):
         status = 'crosses'
     result = {'status': status}
     return result
