@@ -39,7 +39,7 @@ def _check(parms):
                 SpotCheck = False
         #Check to make sure the corner and non corner spots are equal **SPOTS CHECK**
         if(midSpot == firstSpot):
-            SpotCheck = False
+            CrossCheck = False
         #Checks to see if any spot is different **FULL CHECK**
         if(spot != firstSpot):
             FullCheck = False
