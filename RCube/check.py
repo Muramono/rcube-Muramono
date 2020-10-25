@@ -1,7 +1,7 @@
 import hashlib
 
 def _check(parms):
-    status = ''
+    status = 'unknown'
     firstSpot = ''
     midSpot = ''
     cornerSpot = ''
