@@ -18,6 +18,8 @@ def _check(parms):
     IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
     IntegrityKey = IntegrityKey.upper()
     #Integrity Key Check
+    if('cube' not in parms):
+        return {'status': 'error no cube op'}
     if(parms['integrity'] != IntegrityKey):
         return {'status': 'error bad integrity key'}
     # Cube Valid Status Checks
