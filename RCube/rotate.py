@@ -150,9 +150,9 @@ def RightFaceRotate(parms):
         cube[21] = BotS[1]
         cube[24] = BotS[2]
         #Set Top
-        cube[38] = FrontS[2]
-        cube[41] = FrontS[1]
-        cube[44] = FrontS[0]
+        cube[38] = BackS[2]
+        cube[41] = BackS[1]
+        cube[44] = BackS[0]
         #Concatenating List Back Together
         Separator = ''
         return Separator.join(cube)
