@@ -1,6 +1,7 @@
 import hashlib
 import RCube.check as _check
 
+
 def _rotate(parms):
     result = dict()
     status = ''
