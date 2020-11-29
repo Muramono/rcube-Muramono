@@ -8,6 +8,7 @@ def _rotate(parms):
     integrityKey = ''
     
     #Input Parms Check
+    ## TODO Add Parm checks around Side values e.g look for incorrect side input
     if(_check._ParmsCheck(parms) != dict()):
         return _check._ParmsCheck(parms)
     #Check that the inputed cube is valid.
@@ -90,7 +91,6 @@ def FrontFaceRotate(parms):
         #Concatenating List Back Together
         Separator = ''
         return Separator.join(cube)
-    return
 ##END
 
 def RightFaceRotate():
