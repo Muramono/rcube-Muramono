@@ -71,8 +71,6 @@ def FrontFaceRotate(parms):
         LeftS = cube[29] + cube[32] + cube[35]
         #Top Side Values That Change
         TopS = cube[42] + cube[43] + cube[44]
-        print("TopS : ", TopS[0])
-        print("Cube Val : ", cube[9])
         #Set Right Side
         cube[9] =  BotS[2]
         cube[12] = BotS[1]
