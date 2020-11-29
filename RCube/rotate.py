@@ -7,16 +7,18 @@ def _rotate(parms):
     cube = ''
     integritykey = ''
     
+    #Check that the inputed cube is valid.
+    if(CubeValidation(parms) != dict()):
+        return CubeValidation(parms)
+    
     #Check For Valid Key
     if(IntegrityCheck(parms) != dict()):
         return IntegrityCheck(parms)
     
-    #Check that the inputed cube is valid.
-    if(CubeValidation(parms) != dict()):
-        return CubeValidation(parms)
     cube = parms['cube']
     status = 'rotate'
     integritykey = '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'
+    
     
     result = {'status': status, 'cube': cube, 'integrity': integritykey}
     return result
