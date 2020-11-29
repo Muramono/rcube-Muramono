@@ -33,7 +33,7 @@ def _rotate(parms):
 ## Idea Transpose left and right side to get columns then swap them itertively 
 def FrontFaceRotate(parms):
     if(parms['side'] == 'f'):
-        cube = parms['cube']
+        cube = list(parms['cube'])
         #Right Side Values That Change
         RightS = cube[9] + cube[12] + cube[15]
         #Bottom Side Values That Change
@@ -42,8 +42,10 @@ def FrontFaceRotate(parms):
         LeftS = cube[29] + cube[32] + cube[35]
         #Top Side Values That Change
         TopS = cube[42] + cube[43] + cube[44]
+        print("TopS : ", TopS[0])
+        print("Cube Val : ", cube[9])
         #Set Right Side
-        cube[9] = TopS[2]
+        cube[9] =  TopS[2]
         cube[12] = TopS[1]
         cube[15] = TopS[0]
         #Set Bottom
@@ -58,10 +60,40 @@ def FrontFaceRotate(parms):
         cube[42] = LeftS[2]
         cube[43] = LeftS[1]
         cube[44] = LeftS[0]
-        
-        return cube
+        #Concatenating List Back Together
+        Separator = ''
+        return Separator.join(cube)
     if(parms['side'] == 'F'):
-        cube = parms['cube']
+        cube = list(parms['cube'])
+        #Right Side Values That Change
+        RightS = cube[9] + cube[12] + cube[15]
+        #Bottom Side Values That Change
+        BotS = cube[45] + cube[46] + cube[47]
+        #Left Side Values That Change
+        LeftS = cube[29] + cube[32] + cube[35]
+        #Top Side Values That Change
+        TopS = cube[42] + cube[43] + cube[44]
+        print("TopS : ", TopS[0])
+        print("Cube Val : ", cube[9])
+        #Set Right Side
+        cube[9] =  BotS[2]
+        cube[12] = BotS[1]
+        cube[15] = BotS[0]
+        #Set Bottom
+        cube[45] = LeftS[0]
+        cube[46] = LeftS[1]
+        cube[47] = LeftS[2]
+        #Set Left
+        cube[29] = TopS[2]
+        cube[32] = TopS[1]
+        cube[35] = TopS[0]
+        #Set Top
+        cube[42] = RightS[0]
+        cube[43] = RightS[1]
+        cube[44] = RightS[2]
+        #Concatenating List Back Together
+        Separator = ''
+        return Separator.join(cube)
     return
 ##END
 
