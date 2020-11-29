@@ -5,7 +5,7 @@ def _rotate(parms):
     result = dict()
     status = ''
     cube = ''
-    integritykey = ''
+    integrityKey = ''
     
     #Input Parms Check
     if(_check._ParmsCheck(parms) != dict()):
@@ -17,6 +17,11 @@ def _rotate(parms):
     #Check For Valid Key
     if(IntegrityCheck(parms) != dict()):
         return IntegrityCheck(parms)
+    #Set Integrity Key
+    ByteCube = bytearray(parms['cube'],'utf8')
+    integrityKey = hashlib.sha256(ByteCube).hexdigest()
+    integrityKey = integrityKey.upper()
+    
     
     cube = parms['cube']
     status = 'rotate'
