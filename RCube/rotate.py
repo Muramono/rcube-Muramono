@@ -7,6 +7,9 @@ def _rotate(parms):
     cube = ''
     integritykey = ''
     
+    #Input Parms Check
+    if(_check._ParmsCheck(parms) != dict()):
+        return _check._ParmsCheck(parms)
     #Check that the inputed cube is valid.
     if(CubeValidation(parms) != dict()):
         return CubeValidation(parms)
