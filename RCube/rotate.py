@@ -320,29 +320,29 @@ def TopFaceRotate(parms):
     if(parms['side'] == 'T'):
         cube = list(parms['cube'])
         #Back Side Values That Change
-        BackS = cube[20] + cube[23] + cube[26]
-        #Bottom Side Values That Change
-        BotS = cube[45] + cube[48] + cube[51]
+        BackS = cube[18] + cube[19] + cube[20]
+        #Left Side Values That Change
+        LeftS = cube[27] + cube[28] + cube[29]
         #Front Side Values That Change
-        FrontS = cube[0] + cube[3] + cube[6]
-        #Top Side Values That Change
-        TopS = cube[36] + cube[39] + cube[42]
+        FrontS = cube[0] + cube[1] + cube[2]
+        #Right Side Values That Change
+        RightS = cube[9] + cube[10] + cube[11]
         #Set Back Side
-        cube[20] = TopS[2]
-        cube[23] = TopS[1]
-        cube[26] = TopS[0]
-        #Set Bottom
-        cube[45] = BackS[2]
-        cube[48] = BackS[1]
-        cube[51] = BackS[0]
+        cube[18] = RightS[0]
+        cube[19] = RightS[1]
+        cube[20] = RightS[2]
+        #Set Left
+        cube[27] = BackS[0]
+        cube[28] = BackS[1]
+        cube[29] = BackS[2]
         #Set Front
-        cube[0] = BotS[0]
-        cube[3] = BotS[1]
-        cube[6] = BotS[2]
-        #Set Top
-        cube[36] = FrontS[0]
-        cube[39] = FrontS[1]
-        cube[42] = FrontS[2]
+        cube[0] = LeftS[0]
+        cube[1] = LeftS[1]
+        cube[2] = LeftS[2]
+        #Set Right
+        cube[9] = FrontS[0]
+        cube[10] = FrontS[1]
+        cube[11] = FrontS[2]
         #Concatenating List Back Together
         Separator = ''
         return Separator.join(cube)
