@@ -21,10 +21,6 @@ def _rotate(parms):
     #Check For Valid Key
     if(IntegrityCheck(parms) != dict()):
         return IntegrityCheck(parms)
-    #Set Integrity Key
-    ByteCube = bytearray(parms['cube'],'utf8')
-    integrityKey = hashlib.sha256(ByteCube).hexdigest()
-    integrityKey = integrityKey.upper()
     
     if(parms['side'] == 'f' or parms['side'] == 'F'):
         cube = FrontFaceRotate(parms)
@@ -44,6 +40,11 @@ def _rotate(parms):
     if(parms['side'] == 'u' or parms['side'] == 'U'):
         cube = BottomFaceRotate(parms)
         status = 'rotated'
+
+    #Set Integrity Key
+    ByteCube = bytearray(cube,'utf8')
+    integrityKey = hashlib.sha256(ByteCube).hexdigest()
+    integrityKey = integrityKey.upper()
 
     
     
