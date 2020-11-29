@@ -457,6 +457,8 @@ def CubeValidation(parms):
 
 def SideParmCheck(parms):
     ValidSides = ['f', 'F', 'r', 'R', 'b', 'B', 'l', 'L', 't', 'T', 'u', 'U']
+    if(parms['side'] == None):
+        return {'status': 'error: None side'}
     if(parms['side'] == ''):
         return {'status': 'error: blank side input'}
     if(parms['side'] not in ValidSides):
