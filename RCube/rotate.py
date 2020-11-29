@@ -32,6 +32,36 @@ def _rotate(parms):
 
 ## Idea Transpose left and right side to get columns then swap them itertively 
 def FrontFaceRotate(parms):
+    if(parms['side'] == 'f'):
+        cube = parms['cube']
+        #Right Side Values That Change
+        RightS = cube[9] + cube[12] + cube[15]
+        #Bottom Side Values That Change
+        BotS = cube[45] + cube[46] + cube[47]
+        #Left Side Values That Change
+        LeftS = cube[29] + cube[32] + cube[35]
+        #Top Side Values That Change
+        TopS = cube[42] + cube[43] + cube[44]
+        #Set Right Side
+        cube[9] = TopS[2]
+        cube[12] = TopS[1]
+        cube[15] = TopS[0]
+        #Set Bottom
+        cube[45] = RightS[2]
+        cube[46] = RightS[1]
+        cube[47] = RightS[0]
+        #Set Left
+        cube[29] = BotS[0]
+        cube[32] = BotS[1]
+        cube[35] = BotS[2]
+        #Set Top
+        cube[42] = LeftS[2]
+        cube[43] = LeftS[1]
+        cube[44] = LeftS[0]
+        
+        return cube
+    if(parms['side'] == 'F'):
+        cube = parms['cube']
     return
 ##END
 
