@@ -1,8 +1,14 @@
+import hashlib
+import RCube.check as _check
+
 def _rotate(parms):
     result = dict()
     status = ''
     cube = ''
     integritykey = ''
+    
+    if(IntegrityCheck(parms) != dict()):
+        return IntegrityCheck(parms)
     
     cube = parms['cube']
     status = 'rotate'
@@ -32,11 +38,19 @@ def BottomFaceRotate():
     return
 ##END
 
-def IntegrityCheck():
-    return
+def IntegrityCheck(parms):
+    #Sha256 Conversion
+    ByteCube = bytearray(parms['cube'],'utf8')
+    IntegrityKey = hashlib.sha256(ByteCube).hexdigest()
+    IntegrityKey = IntegrityKey.upper()
+    #Integrity Key Check
+    if(parms['integrity'] != IntegrityKey):
+        return {'status': 'error: bad integrity key'}
+    return dict()
 ##END
 
 def CubeValidation():
     return
 ##END
+
 
