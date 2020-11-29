@@ -9,6 +9,8 @@ def _rotate(parms):
     
     #Input Parms Check
     ## TODO Add Parm checks around Side values e.g look for incorrect side input
+    if(SideParmCheck(parms) != dict()):
+        return SideParmCheck(parms)
     if(_check._ParmsCheck(parms) != dict()):
         return _check._ParmsCheck(parms)
     #Check that the inputed cube is valid.
@@ -457,6 +459,7 @@ def SideParmCheck(parms):
     ValidSides = ['f', 'F', 'r', 'R', 'b', 'B', 'l', 'L', 't', 'T', 'u', 'U']
     if(parms['side'] not in ValidSides):
         return {'status': 'error: bad side'}
+    return dict()
     
 
 

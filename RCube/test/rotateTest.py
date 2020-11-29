@@ -141,6 +141,6 @@ class rotateTest(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     def test200_120_BadSideReturnError(self):
         expectedResult = {'status': 'error: bad side'}
-        parms = {'op': 'rotate', 'side': 'x', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '563F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        parms = {'op': 'rotate', 'side': 'x', 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
