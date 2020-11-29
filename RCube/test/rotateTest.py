@@ -134,7 +134,7 @@ class rotateTest(unittest.TestCase):
         parms = {'op': 'rotate', 'side': 'f', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr', 'integrity': None}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
-    def test200_100_CheckNoKeyReturnError(self):
+    def test200_110_CheckNoKeyReturnError(self):
         expectedResult = {'status': 'error: missing key'}
         parms = {'op': 'rotate', 'side': 'f', 'cube': 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr'}
         actualResult = rotate._rotate(parms)
