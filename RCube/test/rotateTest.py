@@ -34,12 +34,12 @@ class rotateTest(unittest.TestCase):
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_030_RightClockwiseCheck(self):
-        expectedResult = {'status': 'rotated', 'cube': 'ggyggyggy rrrrrrrrr wbbwbbwbb ooooooooo wwgwwgwwg yybyybyyb', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
+        expectedResult = {'status': 'rotated', 'cube': 'ggyggyggyrrrrrrrrrwbbwbbwbbooooooooowwgwwgwwgyybyybyyb', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         parms = {'op': 'rotate', 'side': 'r', 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_040_RightCounterClockwiseCheck(self):
-        expectedResult = {'status': 'rotated', 'cube': 'ggwggwggw rrrrrrrrr ybbybbybb ooooooooo wwbwwbwwb yygyygyyg', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
+        expectedResult = {'status': 'rotated', 'cube': 'ggwggwggwrrrrrrrrrybbybbybbooooooooowwbwwbwwbyygyygyyg', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         parms = {'op': 'rotate', 'side': 'R', 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)

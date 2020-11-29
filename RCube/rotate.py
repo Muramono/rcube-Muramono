@@ -109,9 +109,9 @@ def RightFaceRotate(parms):
         #Top Side Values That Change
         TopS = cube[38] + cube[41] + cube[44]
         #Set Front Side
-        cube[2] =  BotS[0]
-        cube[5] = TopS[1]
-        cube[8] = TopS[2]
+        cube[2] = BotS[0]
+        cube[5] = BotS[1]
+        cube[8] = BotS[2]
         #Set Bottom
         cube[47] = BackS[2]
         cube[50] = BackS[1]
