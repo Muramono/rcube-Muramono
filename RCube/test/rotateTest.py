@@ -144,8 +144,14 @@ class rotateTest(unittest.TestCase):
         parms = {'op': 'rotate', 'side': 'x', 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
-    def test200_120_BadSideReturnError(self):
+    def test200_130_BlankSideReturnError(self):
         expectedResult = {'status': 'error: blank side input'}
         parms = {'op': 'rotate', 'side': '', 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
+    def test200_140_NoneSideReturnError(self):
+        expectedResult = {'status': 'error: None side'}
+        parms = {'op': 'rotate', 'side': None, 'cube': 'gggggggggrrrrrrrrrbbbbbbbbbooooooooowwwwwwwwwyyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
+        actualResult = rotate._rotate(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    
