@@ -77,7 +77,7 @@ def CubeValidation(parms):
     if(result != dict()):
         return result
     #Invalid Edge Check
-    result = _.check._EdgeCheck(parms)
+    result = _check._EdgeCheck(parms)
     if(result != dict()):
         return result
     return dict()
