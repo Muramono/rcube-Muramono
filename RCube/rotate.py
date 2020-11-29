@@ -384,29 +384,29 @@ def BottomFaceRotate(parms):
     if(parms['side'] == 'U'):
         cube = list(parms['cube'])
         #Back Side Values That Change
-        BackS = cube[18] + cube[19] + cube[20]
+        BackS = cube[24] + cube[25] + cube[26]
         #Left Side Values That Change
-        LeftS = cube[27] + cube[28] + cube[29]
+        LeftS = cube[33] + cube[34] + cube[35]
         #Front Side Values That Change
-        FrontS = cube[0] + cube[1] + cube[2]
+        FrontS = cube[6] + cube[7] + cube[8]
         #Right Side Values That Change
-        RightS = cube[9] + cube[10] + cube[11]
+        RightS = cube[15] + cube[16] + cube[17]
         #Set Back Side
-        cube[18] = RightS[0]
-        cube[19] = RightS[1]
-        cube[20] = RightS[2]
+        cube[24] = LeftS[0]
+        cube[25] = LeftS[1]
+        cube[26] = LeftS[2]
         #Set Left
-        cube[27] = BackS[0]
-        cube[28] = BackS[1]
-        cube[29] = BackS[2]
+        cube[33] = FrontS[0]
+        cube[34] = FrontS[1]
+        cube[35] = FrontS[2]
         #Set Front
-        cube[0] = LeftS[0]
-        cube[1] = LeftS[1]
-        cube[2] = LeftS[2]
+        cube[6] = RightS[0]
+        cube[7] = RightS[1]
+        cube[8] = RightS[2]
         #Set Right
-        cube[9] = FrontS[0]
-        cube[10] = FrontS[1]
-        cube[11] = FrontS[2]
+        cube[15] = BackS[0]
+        cube[16] = BackS[1]
+        cube[17] = BackS[2]
         #Concatenating List Back Together
         Separator = ''
         return Separator.join(cube)
