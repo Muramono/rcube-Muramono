@@ -129,30 +129,30 @@ def RightFaceRotate(parms):
         return Separator.join(cube)
     if(parms['side'] == 'R'):
         cube = list(parms['cube'])
-        #Right Side Values That Change
-        RightS = cube[9] + cube[12] + cube[15]
+        #Front Side Values That Change
+        FrontS = cube[2] + cube[5] + cube[8]
         #Bottom Side Values That Change
-        BotS = cube[45] + cube[46] + cube[47]
-        #Left Side Values That Change
-        LeftS = cube[29] + cube[32] + cube[35]
+        BotS = cube[47] + cube[50] + cube[53]
+        #Back Side Values That Change
+        BackS = cube[18] + cube[21] + cube[24]
         #Top Side Values That Change
-        TopS = cube[42] + cube[43] + cube[44]
-        #Set Right Side
-        cube[9] =  BotS[2]
-        cube[12] = BotS[1]
-        cube[15] = BotS[0]
+        TopS = cube[38] + cube[41] + cube[44]
+        #Set Front Side
+        cube[2] = TopS[0]
+        cube[5] = TopS[1]
+        cube[8] = TopS[2]
         #Set Bottom
-        cube[45] = LeftS[0]
-        cube[46] = LeftS[1]
-        cube[47] = LeftS[2]
-        #Set Left
-        cube[29] = TopS[2]
-        cube[32] = TopS[1]
-        cube[35] = TopS[0]
+        cube[47] = FrontS[0]
+        cube[50] = FrontS[1]
+        cube[53] = FrontS[2]
+        #Set Back
+        cube[18] = BotS[0]
+        cube[21] = BotS[1]
+        cube[24] = BotS[2]
         #Set Top
-        cube[42] = RightS[0]
-        cube[43] = RightS[1]
-        cube[44] = RightS[2]
+        cube[38] = FrontS[2]
+        cube[41] = FrontS[1]
+        cube[44] = FrontS[0]
         #Concatenating List Back Together
         Separator = ''
         return Separator.join(cube)
