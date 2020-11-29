@@ -22,8 +22,8 @@ def _rotate(parms):
     integrityKey = hashlib.sha256(ByteCube).hexdigest()
     integrityKey = integrityKey.upper()
     
-    
-    cube = parms['cube']
+    if(parms['side'] == 'f' or parms['side'] == 'F'):
+        cube = FrontFaceRotate(parms)
     status = 'rotated'
     
     
@@ -31,7 +31,7 @@ def _rotate(parms):
     return result
 
 ## Idea Transpose left and right side to get columns then swap them itertively 
-def FrontFaceRotate():
+def FrontFaceRotate(parms):
     return
 ##END
 
