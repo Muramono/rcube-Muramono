@@ -453,6 +453,10 @@ def CubeValidation(parms):
     return dict()
 ##END
 
-
+def SideParmCheck(parms):
+    ValidSides = ['f', 'F', 'r', 'R', 'b', 'B', 'l', 'L', 't', 'T', 'u', 'U']
+    if(parms['side'] not in ValidSides):
+        return {'status': 'error: bad side'}
+    
 
 
