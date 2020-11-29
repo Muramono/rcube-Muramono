@@ -25,10 +25,9 @@ def _rotate(parms):
     
     cube = parms['cube']
     status = 'rotated'
-    integritykey = '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'
     
     
-    result = {'status': status, 'cube': cube, 'integrity': integritykey}
+    result = {'status': status, 'cube': cube, 'integrity': integrityKey}
     return result
 
 ## Idea Transpose left and right side to get columns then swap them itertively 
