@@ -10,11 +10,11 @@ class rotateTest(unittest.TestCase):
 
     ## Iteration 3 incremental pre-product development test
      
-    def test000_010_ShouldReturnDefaultStatus(self):
-        expectedResult = {'rotate': 'rotate stub'}
-        parms = {'op': 'rotate'}
-        actualResult = rotate._rotate(parms)
-        self.assertDictEqual(expectedResult, actualResult)
+#     def test000_010_ShouldReturnDefaultStatus(self):
+#         expectedResult = {'rotate': 'rotate stub'}
+#         parms = {'op': 'rotate'}
+#         actualResult = rotate._rotate(parms)
+#         self.assertDictEqual(expectedResult, actualResult)
         
     def test000_020_ShouldReturnCubeStatusIntegrity(self):
         expectedResult = {'status': 'rotated', 'cube': 'ggggggggg rrrrrrrrr bbbbbbbbb ooooooooo wwwwwwwww yyyyyyyyy', 'integrity': '546F560EB2D04BAA5F0F0EBB2F74EF9B0EC42B5EF005E2418B69671DAD467FCF'}
