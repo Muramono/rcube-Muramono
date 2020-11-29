@@ -459,6 +459,8 @@ def SideParmCheck(parms):
     ValidSides = ['f', 'F', 'r', 'R', 'b', 'B', 'l', 'L', 't', 'T', 'u', 'U']
     if(parms['side'] not in ValidSides):
         return {'status': 'error: bad side'}
+    if(parms['side'] == ''):
+        return {'status': 'error: blank side input'}
     return dict()
     
 
