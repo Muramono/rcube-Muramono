@@ -7,6 +7,7 @@ def _rotate(parms):
     cube = ''
     integritykey = ''
     
+    #Check For Valid Key
     if(IntegrityCheck(parms) != dict()):
         return IntegrityCheck(parms)
     
@@ -49,8 +50,33 @@ def IntegrityCheck(parms):
     return dict()
 ##END
 
-def CubeValidation():
-    return
+def CubeValidation(parms):
+    result = dict()
+    #Distinct Elements Check
+    result = _check._CubeDistinctCheck(parms)
+    if(result != dict()):
+        return result
+    #Invalid Corner Check
+    #TopLeft Corner
+    result = _check._TopLeftCornerCheck(parms)
+    if(result != dict()):
+        return result
+    #TopRight Corner
+    result = _check._TopRightCornerCheck(parms)
+    if(result != dict()):
+        return result
+    #BottomRight Corner
+    result = _check._BottomRightCornerCheck(parms)
+    if(result != dict()):
+        return result
+    #BottomLeft Corner
+    result = _check._BottomLeftCornerCheck(parms)
+    if(result != dict()):
+        return result
+    #Invalid Edge Check
+    result = _.check._EdgeCheck(parms)
+    if(result != dict()):
+        return result
 ##END
 
 
