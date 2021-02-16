@@ -19,8 +19,8 @@ def _rotate(parms):
         ##return CubeValidation(parms)
     
     #Check For Valid Key
-    if(IntegrityCheck(parms) != dict()):
-        return IntegrityCheck(parms)
+    ##if(IntegrityCheck(parms) != dict()):
+        ##return IntegrityCheck(parms)
     
     if(parms['side'] == 'f' or parms['side'] == 'F'):
         cube = FrontFaceRotate(parms)
